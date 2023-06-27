@@ -6,5 +6,5 @@ interface LoginService {
     /**
      * 管理员登陆
      */
-    fun adminLogin(userName: Int, password: String): Admin
+    fun adminLogin(userName: Int, password: String): Admin?
 }

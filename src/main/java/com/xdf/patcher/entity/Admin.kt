@@ -1,3 +1,3 @@
 package com.xdf.patcher.entity
 
-data class Admin(val adminId: Int, val pwd: String, val sex: String, val tel: String)
+data class Admin(val adminId: Int, val password: String, val adminName: String)
