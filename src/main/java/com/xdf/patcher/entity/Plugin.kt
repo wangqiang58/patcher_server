@@ -2,10 +2,15 @@ package com.xdf.patcher.entity
 
 import java.sql.Timestamp
 class Plugin {
-    lateinit var versionName: String;
-    lateinit var flavor: String;
-    var status: Int = 0
-    val mark: String? = null
-    var id: Int = 0
-    lateinit var time: Timestamp
+    var versionName: String? = null
+    var flavor: String? = null
+    var status: Int = STATUS_INIT
+    var mark: String? = null
+    var id: Int = -1
+    var time: Timestamp? = null
+    var apkPath:String? = null
+
+    companion object {
+        const val STATUS_INIT:Int = 0
+    }
 }

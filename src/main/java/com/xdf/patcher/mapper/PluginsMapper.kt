@@ -1,9 +1,8 @@
 package com.xdf.patcher.mapper
 
 import com.xdf.patcher.entity.Plugin
-import org.apache.ibatis.annotations.Result
-import org.apache.ibatis.annotations.Results
-import org.apache.ibatis.annotations.Select
+import org.apache.ibatis.annotations.*
+import java.sql.Timestamp
 
 interface PluginsMapper {
 
@@ -20,4 +19,9 @@ interface PluginsMapper {
      */
     @Select("select id, version_name,flavor, status, time, mark from plugin where version_name = #{versionName}")
     fun findPluginsByAppVersion(versionName: String): List<Plugin>?
+
+
+    @Insert("INSERT INTO plugin (version_name, file_path, flavor, status, time, mark) VALUES (#{versionName}, #{apkPath}, #{flavor}, #{status}, #{time}, #{mark})")
+    @Options(useGeneratedKeys=true, keyProperty="id")
+    fun uploadPlugin(plugin: Plugin)
 }

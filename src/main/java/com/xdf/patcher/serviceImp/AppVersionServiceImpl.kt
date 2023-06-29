@@ -6,6 +6,7 @@ import com.xdf.patcher.mapper.AppVersionMapper
 import com.xdf.patcher.mapper.LoginMapper
 import com.xdf.patcher.service.AppVersionService
 import com.xdf.patcher.service.LoginService
+import org.apache.commons.logging.Log
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 
@@ -19,4 +20,12 @@ class AppVersionServiceImpl : AppVersionService {
     override fun findAllAppVersion(): List<AppVersion>? {
         return appVersionMapper.findAllVersions()
     }
+
+    override fun insertAppVesionIfNotExist(versionName: String) {
+        val appVersions = appVersionMapper.isAppVersionExist(versionName)
+        if (appVersions.isNullOrEmpty()) {
+            appVersionMapper.insertAppVersion(versionName)
+        }
+    }
+
 }
