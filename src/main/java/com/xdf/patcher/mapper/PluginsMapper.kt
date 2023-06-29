@@ -8,13 +8,13 @@ import org.apache.ibatis.annotations.Select
 interface PluginsMapper {
 
     @Results(
-            Result(column = "id", property = "id"),
             Result(column = "version_name", property = "versionName"),
-            Result(column = "flavor", property = "flavor"),
             Result(column = "status", property = "status"),
             Result(column = "time", property = "time"),
             Result(column = "mark", property = "mark"),
-    )
+            Result(column = "flavor", property = "flavor"),
+            Result(column = "id", property = "id")
+            )
     /**
      * 查看当前app版本的所有插件
      */

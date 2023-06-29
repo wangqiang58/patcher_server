@@ -1,11 +1,9 @@
 package com.xdf.patcher.controller
 
 import com.xdf.patcher.entity.ApiResult
-import com.xdf.patcher.serviceImp.AppVersionServiceImpl
 import com.xdf.patcher.serviceImp.PluginServiceImpl
 import com.xdf.patcher.util.ApiResultHandler
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod
 import org.springframework.web.bind.annotation.RequestParam
